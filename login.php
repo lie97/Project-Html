@@ -10,9 +10,6 @@ session_start();
 <?php
 require_once "db.php";
 //jika sudah login ; dan belum logout, redirect ke content
-if(isset($_SESSION["username"]))
-	header("location: content.php");
-
 //jika belum login, dan belum ada kirim username dan password
 //tampilkan form login
 if (!isset($_POST["username"]) ||
@@ -35,19 +32,15 @@ if (!isset($_POST["username"]) ||
 			//login user
 			$_SESSION["username"] = $username;
 			//redirect ke content
-			header("location: content.php");
+			header("location: music.html");
 			//jika username/paswword salah ditampilkan warning
-		} if(empty($_POST["username"])) {
-			echo "<p>Enter Username!</p>";
-			return false;
-		} if(empty($_POST["password"])) {
-			echo "<p>Enter Password!<p>";
-			return false;
-		}
+		} if(! isset($username) || ! isset($password) == "") {
+			echo "<p>Enter Username & Password!</p>";
 	} else {
 		echo "<h2>Sistem bermasalah.</h2>";
 		echo "<p>Coba Lagi Beberapa Saat</p>";
 	}
+}
 }
 ?>
 </body>
