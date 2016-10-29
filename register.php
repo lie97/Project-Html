@@ -14,14 +14,17 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["name
 
 	$hasil = $query->execute();
 
-	if($hasil)
-		$pesan ="User berhasil ditambahkan";
+	if(!isset($name) || !isset($username) || !isset($password) || !isset($confirmpassword) == "") {
+    	$pesan = "You did not fill out the required fields.";
+	}if($hasil)
+		$pesan ="Register Berhasil";
 	else
-		$pesan = "Gagal tambah user";
+		$pesan = "Isi Kolom yang Kosong";
 } else {
 	$pesan = "User/Password tidak dikirim";
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,5 +32,7 @@ if (isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["name
 </head>
 <body>
 <p><?php echo $pesan; ?></p>
+<button type="button"><a href = "music.html">Go to Music Page</a></button>
+<button type="button"><a href = "music.html">Go to Music Page</a></button>
 </body>
 </html>
