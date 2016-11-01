@@ -15,14 +15,14 @@ if (isset($_POST["penyanyi"]) && isset($_POST["namavideo"]) && isset($_POST["vid
     $video = $_POST["video"];
 
     $conn = konek_db();
+    
+    $query = $conn->prepare("insert into video(penyanyi,namavideo,video) values(?, ?, ?)");
 
-    $query = $conn->prepare("insert into video(penyanyi, namavideo, video) values(?, ?, ?)");
-
-    $query->bind_param("sss", $penyanyi, $namalagu, $video);
+    $query->bind_param("sss", $penyanyi, $namavideo, $video);
 
     $result = $query->execute();
 
-    if (! $result)
+    if (!$result)
         die("<p>Proses query gagal.</p>");
 
     echo "<p>Video Berhasil Ditambahkan.</p>";
