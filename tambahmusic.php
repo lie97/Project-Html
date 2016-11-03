@@ -1,7 +1,8 @@
 <?php
 require_once "db.php";
 
-if (isset($_POST["penyanyi"]) && isset($_POST["namalagu"])) {
+if (isset($_POST["penyanyi"]) && isset($_POST["namalagu"]) && isset($_POST["idlagu"])) {
+    $idlagu = $_POST["idlagu"];
     $penyanyi  = $_POST["penyanyi"];
     $namalagu = $_POST["namalagu"];
 
@@ -18,9 +19,9 @@ if (isset($_POST["penyanyi"]) && isset($_POST["namalagu"])) {
             copy ($music['tmp_name'], 'music/' . $file_music);  
         }
     }  
-    $query = $conn->prepare("insert into music values(?, ?, ?)");
+    $query = $conn->prepare("insert into music values(?, ?, ?, ?)");
 
-    $query->bind_param("sss", $penyanyi, $namalagu, $file_music);
+    $query->bind_param("ssss", $idlagu, $penyanyi, $namalagu, $file_music);
 
     $result = $query->execute();
 

@@ -29,12 +29,13 @@ $rows = $query->get_result();
 
 <?php
 while ($row = $rows->fetch_array()) {
-	$url_edit = "edit.php?penyanyi=" . $row['penyanyi'] . "&namalagu=" .  $row['namalagu'];
-	$url_delete = "delete.php?penyanyi=" . $row['penyanyi'] . "&namalagu=" .  $row['namalagu'];
+	$url_updatemusic = "updatemusic.html?id=" . $row['id'] . "&penyanyi=" . $row['penyanyi'] . "&namalagu=" .  $row['namalagu'];
+	$url_delete = "deletemusic.php?id=" . $row['id'] . "&penyanyi=" . $row['penyanyi'] . "&namalagu=" .  $row['namalagu'];
 	echo "<tr>";
+	echo "<td>" . $row["id"] . "</td>";
 	echo "<td>" . $row['penyanyi'] . "</td>";
 	echo "<td>" . $row['namalagu'] . "</td>";
-	echo "<td><a href='" . $url_edit . "'><button>Edit</button></a>";
+	echo "<td><a href='" . $url_updatemusic . "'><button>Edit</button></a>";
 	echo "<a href='" . $url_delete . "'><button>Delete</button></a></td>";
 	echo "</tr>";
 }

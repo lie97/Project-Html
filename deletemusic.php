@@ -3,14 +3,15 @@ require_once "db.php";
 
 $conn = konek_db();
 
-if(! isset($_GET["penyanyi"]) && !isset($_GET["namalagu"]))
-	die("Lagu Tidak Ditemukan");
+if(! isset($_GET["penyanyi"]) && !isset($_GET["namalagu"]) && !isset($_GET["id"]))
+	die("Error");
 
 $penyanyi = $_GET["penyanyi"];
 $namalagu = $_GET["namalagu"];
+$id = $_GET["id"];
 
-$query = $conn->prepare("select * from music where penyanyi=? and namalagu=?");
-$query->bind_param("ss",$penyanyi, $namalagu);
+$query = $conn->prepare("select * from music where id=?");
+$query->bind_param("s", $id);
 
 $result = $query->execute();
 
@@ -22,13 +23,13 @@ if($rows->num_rows==0)
 	die("Lagu tidak ditemukan");
 $post = $rows->fetch_object();
 $music = $post->music;
-if($music != null && file_exists("music")) {
-	//hapus image
-	unlink("music");
+if($music != null && file_exists("music/$music")) {
+	//hapus lagu
+	unlink("music/$music");
 }
 
-$query = $conn->prepare("delete from music where penyanyi=? and namalagu=?");
-$query->bind_param("ss",$penyanyi, $namalagu);
+$query = $conn->prepare("delete from music where id=?");
+$query->bind_param("s",$id);
 $result = $query->execute();
 if($result)
 	echo"<p>Lagu telah dihapus</p>";

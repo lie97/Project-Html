@@ -39,7 +39,6 @@ li a:hover:not(.active) {
       height: 10em;
       position: relative;
       margin-left: 20%;
-      transform: translate(-50%,);
     }
 
 span.logo{
@@ -82,7 +81,6 @@ td:nth-child(3){
     <div class="navbar">
       <ul>
         <li><a href="#home">Music</a></li>
-        <li><a href="#news">Video</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
       <?php
