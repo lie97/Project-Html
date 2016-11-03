@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
 <?php
 require_once "db.php";
 
@@ -41,5 +33,3 @@ if (isset($_POST["penyanyi"]) && isset($_POST["namalagu"])) {
     echo "<p>Music Gagal Ditambahkan</p>";
 }
 ?>
-</body>
-</html>
