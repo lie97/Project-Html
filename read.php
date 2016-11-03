@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cara membaca data dari database</title>
+	<title>Edit Data Music</title>
 </head>
 <body>
 <?php
