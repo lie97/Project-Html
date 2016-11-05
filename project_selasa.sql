@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 05, 2016 at 03:47 PM
+-- Generation Time: Nov 05, 2016 at 05:47 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.6.24
 
@@ -41,7 +41,7 @@ INSERT INTO `music` (`id`, `penyanyi`, `namalagu`, `music`) VALUES
 ('1', 'Aimer', '+ninelie', 'Aimer - +ninelie.mp3'),
 ('2', 'Ray', 'Ebb and Flow', 'Ray - Ebb and Flow.mp3'),
 ('3', 'Claris', 'Gravity', 'Claris - Gravity.mp3'),
-('4', 'Lisa', 'Crossing Field', 'Lisa - Crossing Field.mp3'),
+('4', 'Nana Mizuki', 'Starting Now', 'Nana Mizuki - Starting Now.mp3'),
 ('5', 'Azu', 'For You', 'Azu - For You.mp3');
 
 --
