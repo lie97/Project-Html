@@ -3,6 +3,19 @@
 <head>
 	<title>Add Music</title>
 	<style>
+		body{
+			background: url("images/back.jpg");
+			background-size: cover;
+		}
+		.back{
+			width:450px;
+			height: 200px;
+			background-color:#ffccdc;
+			margin-top: 150px;
+			margin-left: 450px;
+			padding-top: 100px;
+		}
+
 		.space{
 			margin-bottom: 5px;
 		}
@@ -10,24 +23,35 @@
 </head>
 <body>
 <form method="post" action="tambahmusic.php" enctype="multipart/form-data">
+<div class="back">
 <div class="space">
-	<label> Id Lagu:</label>
+	<center>
+	<label style="margin-right: 50px;"> Id Lagu </label><label>:</label>
 	<input type="text" name="idlagu" placeholder="ID Lagu">
+	</center>
 </div>
 <div class="space">
-	<label> Nama Penyanyi:</label>
+	<center>
+	<label> Nama Penyanyi </label><label>:</label>
 	<input type="text" name="penyanyi" placeholder="Artist Name">
+	</center>
 </div>
 <div class="space">
-	<label> Nama Lagu:</label>
+	<center>
+	<label style="margin-right: 27px;"> Nama Lagu </label><label>:</label>
 	<input type="text" name="namalagu" placeholder="Song Name">
+	</center>
 </div>
 <div class="space">
-	<label>File: </label>
+	<label style="margin-right: 77px; margin-left: 82px;">File </label><label>: </label>
 	<input type="file" name="music"> <br>
 </div>
 <div class ="space">
-	 <input type="submit" value="Add">
+	<center>
+	<input type="submit" value="Add" style="margin-left:170px;">
+	<button><a href="admin.php" style="text-decoration: none; color:black;">Edit Music</a></button>
+	</center>
+</div>
 </div>
 </form>
 </body>

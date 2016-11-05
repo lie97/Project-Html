@@ -9,7 +9,7 @@ require_once "db.php";
 
 $conn = konek_db();
 
-if (!isset($_GET["id"]) && !isset($_GET["penyanyi"]) && !isset($_GET["namalagu"]))
+if (!isset($_GET["penyanyi"]) && !isset($_GET["namalagu"]))
 	die("Error");
 
 $id = $_GET["id"];

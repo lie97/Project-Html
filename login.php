@@ -1,12 +1,7 @@
 <?php 
 session_start();
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Login</title>
-</head>
-<body>
+
 <?php
 require_once "db.php";
 //jika sudah login ; dan belum logout, redirect ke content
@@ -32,9 +27,9 @@ if (!isset($_POST["username"]) ||
 			//login user
 			$_SESSION["username"] = $username;
 			//redirect ke content
-			header("location: music.html");
+			header("location: music.php");
 			//jika username/paswword salah ditampilkan warning
-		} if(! isset($username) || ! isset($password) == "") {
+		} if(isset($username) || isset($password) == "") {
 			echo "<p>Enter Username & Password!</p>";
 	} else {
 		echo "<h2>Sistem bermasalah.</h2>";
@@ -43,5 +38,3 @@ if (!isset($_POST["username"]) ||
 }
 }
 ?>
-</body>
-</html>

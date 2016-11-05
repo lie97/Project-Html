@@ -22,7 +22,8 @@ $rows = $query->get_result();
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Nama Produk</th>
+			<th>Nama Penyanyi</th>
+			<th>Nama Lagu</th>
 			<th>Edit</th>
 			<th>Delete</th>
 		</tr>
@@ -35,8 +36,8 @@ while ($row = $rows->fetch_array()) {
 	echo "<td>" . $row["id"] . "</td>";
 	echo "<td>" . $row['penyanyi'] . "</td>";
 	echo "<td>" . $row['namalagu'] . "</td>";
-	echo "<td><a href='" . $url_updatemusic . "'><button>Edit</button></a>";
-	echo "<a href='" . $url_delete . "'><button>Delete</button></a></td>";
+	echo "<td><a href='" . $url_updatemusic . "'><button>Edit</button></a></td>";
+	echo "<td><a href='" . $url_delete . "'><button>Delete</button></a></td>";
 	echo "</tr>";
 }
 ?>
