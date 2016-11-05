@@ -1,7 +1,7 @@
 <?php
 require_once "db.php";
 
-if (isset($_POST["penyanyi"]) && isset($_POST["namalagu"]) && isset($_POST["idlagu"])) {
+if (!empty($_POST["penyanyi"]) && !empty($_POST["namalagu"]) && !empty($_POST["idlagu"])) {
     $idlagu = $_POST["idlagu"];
     $penyanyi  = $_POST["penyanyi"];
     $namalagu = $_POST["namalagu"];

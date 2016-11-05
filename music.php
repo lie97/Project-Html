@@ -80,7 +80,7 @@ td:nth-child(3){
   <span class="logo">Welcome to Gangsta</span> <br>
     <div class="navbar">
       <ul>
-        <li><a href="#home">Music</a></li>
+        <li><a href="#top">Music</a></li>
         <li><a href="logout.php">Logout</a></li>
       </ul>
       <?php
@@ -101,7 +101,7 @@ td:nth-child(3){
     </div>
   <table>
     <tr>
-      <th>Artist</th>
+      <th id="top">Artist</th>
       <th>Song Title</th>
       <th colspan="2">Music</th>
     </tr>
