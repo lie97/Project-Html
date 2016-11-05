@@ -6,8 +6,6 @@ $conn = konek_db();
 if(! isset($_GET["penyanyi"]) && !isset($_GET["namalagu"]) && !isset($_GET["id"]))
 	die("Error");
 
-$penyanyi = $_GET["penyanyi"];
-$namalagu = $_GET["namalagu"];
 $id = $_GET["id"];
 
 $query = $conn->prepare("select * from music where id=?");

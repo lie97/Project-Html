@@ -1,26 +1,24 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 05, 2016 at 03:47 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 5.6.24
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
 --
 -- Database: `project selasa`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `user` varchar(300) NOT NULL,
-  `password` varchar(1000) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `login`
---
-
-INSERT INTO `login` (`user`, `password`, `name`, `email`) VALUES
-('lie', '2cfe534aa66900e81f6f20b02826b6132d2df8de', 'Lie', 'nixon.lie97@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -40,17 +38,15 @@ CREATE TABLE `music` (
 --
 
 INSERT INTO `music` (`id`, `penyanyi`, `namalagu`, `music`) VALUES
-('1', 'Aimer', '+ninelie', 'Aimer - +ninelie.mp3');
+('1', 'Aimer', '+ninelie', 'Aimer - +ninelie.mp3'),
+('2', 'Ray', 'Ebb and Flow', 'Ray - Ebb and Flow.mp3'),
+('3', 'Claris', 'Gravity', 'Claris - Gravity.mp3'),
+('4', 'Lisa', 'Crossing Field', 'Lisa - Crossing Field.mp3'),
+('5', 'Azu', 'For You', 'Azu - For You.mp3');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`user`);
 
 --
 -- Indexes for table `music`

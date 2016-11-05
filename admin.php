@@ -30,8 +30,8 @@ $rows = $query->get_result();
 
 <?php
 while ($row = $rows->fetch_array()) {
-	$url_updatemusic = "updatemusic.html?id=" . $row['id'] . "&penyanyi=" . $row['penyanyi'] . "&namalagu=" .  $row['namalagu'];
-	$url_delete = "deletemusic.php?id=" . $row['id'] . "&penyanyi=" . $row['penyanyi'] . "&namalagu=" .  $row['namalagu'];
+	$url_updatemusic = "editmusic.php?id=" . $row['id'];
+	$url_delete = "deletemusic.php?id=" . $row['id'];
 	echo "<tr>";
 	echo "<td>" . $row["id"] . "</td>";
 	echo "<td>" . $row['penyanyi'] . "</td>";
@@ -42,5 +42,6 @@ while ($row = $rows->fetch_array()) {
 }
 ?>
 	</table>
+	<button><a href="tambahmusic.html" style="text-decoration: none;color:black;">Add Song</a></button>
 </body>
 </html>

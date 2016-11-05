@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Contoh update data ke database</title>
-</head>
-<body>
 <?php
 require_once "db.php";
 
 $conn = konek_db();
 
-if (!isset($_GET["penyanyi"]) && !isset($_GET["namalagu"]))
-	die("Error");
+if (!isset($_POST["penyanyi"]) && !isset($_POST["namalagu"]))
+die("data tidak lengkap");
 
 $id = $_GET["id"];
-$penyanyi = $_GET["penyanyi"];
-$namalagu = $_GET["namalagu"];
-$query = $conn->prepare("select * from music where id=? and penyanyi=? and namalagu=?");
-$query->bind_param("sss", $id, $penyanyi, $namalagu);
+$penyanyi = $_POST["penyanyi"];
+$namalagu = $_POST["namalagu"];
+$query = $conn->prepare("select * from music where id=?");
+$query->bind_param("s", $id);
 $result = $query->execute();
+
 
 if (! $result)
 	die("Gagal query");
@@ -42,21 +37,19 @@ if($_FILES["lagu"]["error"] == 0) {
 			$extension = new SplFileInfo($music['name']);
 			$extension = $entexsion->getExtension();
 			$file_gambar = $nama . ' . ' . $extension;
-			copy ($music['tmp_name'], 'music/' . $file_gambar);
+			copy ($music['tmp_name'], 'music/' . $file_music);
 		}
 	}
 } else {
-	//tetap file gambar yang lama
-	$file_gambar = $file->music;
+	$file_music = $file->music;
 }
 
-if (!isset($_POST["id"]))
-	die("Lagu Tidak Ditemukan");
+if (!$id)
+	die("Error");
 
-$id = $_POST["id"];
 
 $query = $conn->prepare("update music set penyanyi=?, namalagu=?, music=? where id=?");
-$query->bind_param("sss", $penyanyi, $namalagu, $music);
+$query->bind_param("ssss", $penyanyi, $namalagu, $music,$id);
 $result = $query->execute();
 
 if ($result)
@@ -64,5 +57,3 @@ if ($result)
 else
 	echo "<p>Gagal Mengupdate Music</p>";
 ?>
-</body>
-</html>
